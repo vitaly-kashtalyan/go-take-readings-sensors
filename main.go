@@ -62,7 +62,7 @@ func getJSON(url string, result interface{}) error {
 
 func sendMessage(message Message) error {
 	uri := fmt.Sprintf("http://%s/publish", getMqttSenderHost())
-	fmt.Printf("POST: %s BODY: %v\n", uri, message)
+	//fmt.Printf("POST: %s BODY: %v\n", uri, message)
 	body := new(bytes.Buffer)
 	err := json.NewEncoder(body).Encode(message)
 	if err != nil {
