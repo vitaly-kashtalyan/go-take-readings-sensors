@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+    restart: always
+    container_name: go_take_readings_sensors_app
+    environment:
+      SENSORS_HOST: 192.168.0.49
+      MQTT_SENDER_HOST: mqttsender:8080
+    ports:
+      - 8080:8080
