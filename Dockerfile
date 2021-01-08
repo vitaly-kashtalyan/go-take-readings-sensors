@@ -6,5 +6,5 @@ COPY main.go .
 RUN go build -o main .
 
 FROM alpine:latest
-COPY --from=build main .
+COPY --from=build /app/main .
 CMD ["./main"]
